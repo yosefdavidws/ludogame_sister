@@ -5,4 +5,3 @@ ganti codenya di
 ludogame_sister/src/coba_ludo/
 
 
-Testing
