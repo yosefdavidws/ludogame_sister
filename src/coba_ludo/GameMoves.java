@@ -40,7 +40,7 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
         requestFocus();
         current_player=0;
         bp=new Build_Player();
-        la = new Layout(80,50, txt1f,txt2f,txt3f,txt4f);
+        la = new Layout(250,100, txt1f,txt2f,txt3f,txt4f);
         dice=0;
         flag=0;
         roll=0;
@@ -49,7 +49,7 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
 
     @Override
     public void paint(Graphics g) {
-        la = new Layout(80,50, txt1f,txt2f,txt3f,txt4f);
+        la = new Layout(250,100, txt1f,txt2f,txt3f,txt4f);
     	la.draw((Graphics2D)g);
     	bp.draw((Graphics2D)g);
     	if(bp.pl[current_player].coin==4) {
