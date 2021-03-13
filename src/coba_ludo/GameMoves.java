@@ -144,8 +144,8 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
 		if(flag==1) {
 			int x=e.getX();
 			int y=e.getY();
-			x=x-80;
-			y=y-50;
+			x=x-250;
+			y=y-100;
 			x=x/30;
 			y=y/30;
 			int value=-1;
