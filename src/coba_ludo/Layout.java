@@ -16,8 +16,8 @@ public class Layout extends JPanel{
             b1 = b;
             c1 = c;
             d1 = d;
-		x=xi;//80
-		y=yi;//50
+		x=xi;//250
+		y=yi;//100
 		width=30;//lebar kotak satuan (1)
 		height=30;//tinggi kotak satuan (1)
                 
@@ -134,10 +134,10 @@ public class Layout extends JPanel{
         g.drawOval(x+5+(8*width),y+5+(12*height),width-10,height-10);
         g.drawOval(x+5+(2*width),y+5+(8*height),width-10,height-10);
         g.setFont(new Font("serif", Font.BOLD, 30));//font
-        g.drawString(""+a1, 90, 35);
-        g.drawString(""+b1, 370, 35);
-        g.drawString(""+c1, 90, 540);
-        g.drawString(""+d1, 370, 540);
+        g.drawString(""+a1, 260, 85);
+        g.drawString(""+b1, 540, 85);
+        g.drawString(""+c1, 260, 590);
+        g.drawString(""+d1, 540, 590);
         g.drawString("Instruction:", 550,300);
         g.drawString("1.Tekan enter untuk bermain", 550,350);
         g.drawString("2.Tekan koin untuk jalan", 550,400);
