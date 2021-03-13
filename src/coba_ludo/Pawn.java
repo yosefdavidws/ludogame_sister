@@ -17,7 +17,7 @@ public class Pawn {
 	}
 	public void draw(Graphics2D g, int i, int j,int play) {
 		if(current==-1) {//koin masih didalam rumah
-			int temp1=80+(height/2),temp2=50+(width/2);
+			int temp1=250+(height/2),temp2=100+(width/2);
 			x=i;
 			y=j;
 			if(play==0) {
@@ -39,7 +39,7 @@ public class Pawn {
 		}
                 else //koin jika sudah keluar dari rumah
 		{
-			int temp1=80,temp2=50;
+			int temp1=250,temp2=100;
 			x=Path.ax[play][current];
 			y=Path.ay[play][current];
 			if(play==0) {
