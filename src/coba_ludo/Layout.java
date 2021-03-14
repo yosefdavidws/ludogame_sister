@@ -144,11 +144,11 @@ public class Layout extends JPanel{
         g.setColor(Color.BLACK);
         g.drawString("Mulai", 455, 110);
         g.setColor(Color.WHITE);
-        g.drawRect(452,10,50,60);
+        g.drawRect(455,20,50,50); 
         g.setColor(Color.BLACK);//garis
-        g.drawRect(452, 10, 50, 60);
+        g.drawRect(455, 20, 50, 50);
         g.setColor(Color.BLACK);
-        g.drawString("Dadu", 455, 50);
+        g.drawString("Dadu", 457, 50);
         
     }
 }
