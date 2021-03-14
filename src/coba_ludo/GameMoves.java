@@ -105,11 +105,38 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
             g.setFont(new Font("serif", Font.BOLD, 30));
             g.drawString(""+namap, 465, 110);
             g.setColor(Color.WHITE);
-            g.fillRect(452,10,50,60);
+            g.fillRect(455,20,50,50);
     	g.setColor(Color.BLACK);//memberi garis pinggir
-        g.drawRect(452,10,50,60);
+        g.drawRect(455,20,50,50);
             g.setColor(Color.BLACK);
-            g.drawString(""+dice, 465, 50);
+             if(dice == 1){
+                
+            g.drawString(".", 477, 45); /// yang diubah bagian sini
+            }
+            else if ( dice == 2){
+            g.drawString(".  .", 465, 45); /// yang diubah bagian sini      
+            }
+            else if ( dice == 3){
+            g.drawString(".", 490, 30); /// X,Y 
+            g.drawString(".", 477, 45); /// yang diubah bagian sini     
+            g.drawString(".", 465, 60); /// yang diubah bagian sini   
+
+            }
+            else if ( dice == 4){
+             g.drawString(".  .", 465, 30); /// X,Y      
+             g.drawString(".  .", 465, 60); /// yang diubah bagian sini
+            }
+            else if ( dice == 5){
+             g.drawString(".  .", 465, 30); /// X,Y 
+             g.drawString(".", 477, 45); /// yang diubah bagian sini  
+             g.drawString(".  .", 465, 60); /// yang diubah bagian sini   
+            }
+            else {
+             g.drawString(".  .", 465, 30); /// X,Y /
+             g.drawString(".  .", 465, 45); /// yang diubah bagian sini     
+             g.drawString(".  .", 465, 60); /// yang diubah bagian sini
+            }
+
     	}
     	if(flag==0&&dice!=0&&dice!=6&&kill==0) { //next player
 			current_player=(current_player+1)%4;
