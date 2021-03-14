@@ -40,7 +40,7 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
         requestFocus();
         current_player=0;
         bp=new Build_Player();
-        la = new Layout(250,100, txt1f,txt2f,txt3f,txt4f);
+        la = new Layout(250,150, txt1f,txt2f,txt3f,txt4f);
         dice=0;
         flag=0;
         roll=0;
@@ -49,12 +49,12 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
 
     @Override
     public void paint(Graphics g) {
-        la = new Layout(250,100, txt1f,txt2f,txt3f,txt4f);
+        la = new Layout(250,150, txt1f,txt2f,txt3f,txt4f);
     	la.draw((Graphics2D)g);
     	bp.draw((Graphics2D)g);
     	if(bp.pl[current_player].coin==4) {
     		g.setColor(Color.WHITE);//tempat pergantian player
-    		g.fillRect(550, 50, 400,220);
+    		g.fillRect(250,5,450,130);
     		if(current_player==0) {
 				g.setColor(Color.RED);
                                 namap =txt1f;
@@ -71,11 +71,11 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
 				g.setColor(Color.BLUE);
                                 namap =txt3f;
 			}
-            g.setFont(new Font("serif", Font.BOLD, 40));
-            g.drawString("Player "+(current_player+1)+" wins.", 600, 150);
-            g.drawString("Congratulations.", 600, 200);
+            g.setFont(new Font("serif", Font.BOLD, 30));
+            g.drawString("Player "+(current_player+1)+" wins.", 465, 110);
+            g.drawString("Congratulations.", 465, 160);
             current_player=0;
-            la = new Layout(80,50,txt1f,txt2f,txt3f,txt4f);
+            la = new Layout(250,150,txt1f,txt2f,txt3f,txt4f);
             bp=new Build_Player();
             dice=0;
             flag=0;
@@ -84,7 +84,7 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
     	}
     	else if(dice!=0) {
     		g.setColor(Color.WHITE);//tempat pergantian player
-    		g.fillRect(550, 50, 400,220);
+    		g.fillRect(250,5,450,130);
     		if(current_player==0) {
 				g.setColor(Color.RED);
                                 namap =txt1f;
@@ -102,14 +102,14 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
                                
                                 namap =txt3f;
 			}
-            g.setFont(new Font("serif", Font.BOLD, 40));
-            g.drawString(""+namap, 690, 120);
+            g.setFont(new Font("serif", Font.BOLD, 30));
+            g.drawString(""+namap, 465, 110);
             g.setColor(Color.WHITE);
-            g.fillRect(700, 150, 100, 100);
+            g.fillRect(452,10,50,60);
     	g.setColor(Color.BLACK);//memberi garis pinggir
-        g.drawRect(700,150,100,100);
+        g.drawRect(452,10,50,60);
             g.setColor(Color.BLACK);
-            g.drawString(""+dice, 740, 210);
+            g.drawString(""+dice, 465, 50);
     	}
     	if(flag==0&&dice!=0&&dice!=6&&kill==0) { //next player
 			current_player=(current_player+1)%4;
@@ -145,7 +145,7 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
 			int x=e.getX();
 			int y=e.getY();
 			x=x-250;
-			y=y-100;
+			y=y-150;
 			x=x/30;
 			y=y/30;
 			int value=-1;
