@@ -133,13 +133,22 @@ public class Layout extends JPanel{
         g.drawOval(x+5+(12*width),y+5+(6*height),width-10,height-10);
         g.drawOval(x+5+(8*width),y+5+(12*height),width-10,height-10);
         g.drawOval(x+5+(2*width),y+5+(8*height),width-10,height-10);
-        g.setFont(new Font("serif", Font.BOLD, 30));//font
-        g.drawString(""+a1, 260, 85);
-        g.drawString(""+b1, 540, 85);
-        g.drawString(""+c1, 260, 590);
-        g.drawString(""+d1, 540, 590);
-        g.drawString("Instruction:", 550,300);
-        g.drawString("1.Tekan enter untuk bermain", 550,350);
-        g.drawString("2.Tekan koin untuk jalan", 550,400);
+        g.setFont(new Font("serif", Font.BOLD, 20));//font
+        g.drawString(""+a1, 260, 135);
+        g.drawString(""+b1, 540, 135);
+        g.drawString(""+c1, 260, 620);
+        g.drawString(""+d1, 540, 620);
+		
+	g.setColor(Color.WHITE);//tempat pergantian player
+        g.fillRect(250,5,450,130);
+        g.setColor(Color.BLACK);
+        g.drawString("Mulai", 455, 110);
+        g.setColor(Color.WHITE);
+        g.drawRect(452,10,50,60);
+        g.setColor(Color.BLACK);//garis
+        g.drawRect(452, 10, 50, 60);
+        g.setColor(Color.BLACK);
+        g.drawString("Dadu", 455, 50);
+        
     }
 }
