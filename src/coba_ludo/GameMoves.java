@@ -22,34 +22,33 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
 	Timer time;
 	int delay=10;
 	int current_player,dice;
-        String namap;
 	int flag=0,roll,kill=0;
         String txt1f ;
          String txt2f;
          String txt3f;
          String txt4f ;
-        public void namapemain(String txt1,String txt2, String txt3,String txt4){
+         String namap;
+	public GameMoves() {
+        setFocusTraversalKeysEnabled(false);
+        requestFocus();
+        current_player=0;
+        la = new Layout(250,150,txt1f,txt2f,txt3f,txt4f);
+        bp=new Build_Player(la.height,la.width);
+        dice=0;
+        flag=0;
+        roll=0;
+        kill=0;
+    }
+public void namapemain(String txt1,String txt2, String txt3,String txt4){
          txt1f = txt1;
           txt2f = txt2;
          txt3f = txt3;
          txt4f = txt4;
          
      }
-	public GameMoves() {
-        setFocusTraversalKeysEnabled(false);
-        requestFocus();
-        current_player=0;
-        bp=new Build_Player();
-        la = new Layout(250,150, txt1f,txt2f,txt3f,txt4f);
-        dice=0;
-        flag=0;
-        roll=0;
-        kill=0;
-    }
-
     @Override
     public void paint(Graphics g) {
-        la = new Layout(250,150, txt1f,txt2f,txt3f,txt4f);
+        la = new Layout(250,150,txt1f,txt2f,txt3f,txt4f);
     	la.draw((Graphics2D)g);
     	bp.draw((Graphics2D)g);
     	if(bp.pl[current_player].coin==4) {
@@ -71,12 +70,10 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
 				g.setColor(Color.BLUE);
                                 namap =txt3f;
 			}
-            g.setFont(new Font("serif", Font.BOLD, 30));
-            g.drawString("Player "+(current_player+1)+" wins.", 465, 110);
-            g.drawString("Congratulations.", 465, 160);
+            g.setFont(new Font("serif", Font.BOLD, 40));
+            g.drawString(namap+"Menang!", 455, 110);
             current_player=0;
-            la = new Layout(250,150,txt1f,txt2f,txt3f,txt4f);
-            bp=new Build_Player();
+            bp=new Build_Player(la.height,la.width);
             dice=0;
             flag=0;
             roll=0;
@@ -95,22 +92,18 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
 			}
 			else if(current_player==2) {
 				g.setColor(Color.YELLOW);
-                                  namap =txt4f;
+                                namap =txt4f;
 			}
 			else if(current_player==3) {
 				g.setColor(Color.BLUE);
-                               
                                 namap =txt3f;
 			}
-            g.setFont(new Font("serif", Font.BOLD, 30));
-            g.drawString(""+namap, 465, 110);
+            g.drawString(""+namap, 450, 95);
             g.setColor(Color.WHITE);
             g.fillRect(455,20,50,50);
-    	g.setColor(Color.BLACK);//memberi garis pinggir
+            g.setColor(Color.BLACK);//memberi garis pinggir
         g.drawRect(455,20,50,50);
-            g.setColor(Color.BLACK);
              if(dice == 1){
-                
             g.drawString(".", 477, 45); /// yang diubah bagian sini
             }
             else if ( dice == 2){
@@ -136,13 +129,51 @@ public class GameMoves extends JPanel implements KeyListener, ActionListener,Mou
              g.drawString(".  .", 465, 45); /// yang diubah bagian sini     
              g.drawString(".  .", 465, 60); /// yang diubah bagian sini
             }
-
     	}
+        
     	if(flag==0&&dice!=0&&dice!=6&&kill==0) { //next player
-			current_player=(current_player+1)%4;
+            if(current_player==3) {
+                                namap =txt1f;
+			}
+			else if(current_player==0) {
+                                namap =txt2f;
+			}
+			else if(current_player==1) {
+                                namap =txt4f;
+			}
+			else if(current_player==2) {
+                                namap =txt3f;
+			}
+            g.setColor(Color.GRAY);
+            g.setFont(new Font("serif", Font.BOLD, 20));
+            g.drawString("berikutnya: "+namap, 415, 120);
+            current_player=(current_player+1)%4;
+                        
 		}
+        if(dice==6){
+            if(current_player==0) {
+				g.setColor(Color.RED);
+                                namap =txt1f;
+			}
+			else if(current_player==1) {
+				g.setColor(Color.GREEN);
+                                namap =txt2f;
+			}
+			else if(current_player==2) {
+				g.setColor(Color.YELLOW);
+                                namap =txt4f;
+			}
+			else if(current_player==3) {
+				g.setColor(Color.BLUE);
+                                namap =txt3f;
+			}
+            g.setColor(Color.GRAY);
+            g.setFont(new Font("serif", Font.BOLD, 20));
+            g.drawString(namap+" main lagi", 415, 120);
+        }
     	kill=0;
     }
+    
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
