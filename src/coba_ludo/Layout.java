@@ -140,19 +140,36 @@ public class Layout extends JPanel{
         g.setFont(new Font("serif", Font.BOLD, 30));//font
         g.setColor(Color.RED);
         g.fillOval(220,623,25,25);
+        if (a1 == null){
+        g.drawString("", 250, 646);
+        } else {
         g.drawString(""+a1, 250, 646);
+        }
         
         g.setColor(Color.GREEN);
         g.fillOval(380,623,25,25);
+        if (b1 == null){
+        g.drawString("", 410, 646);
+        } else {
         g.drawString(""+b1, 410, 646);
+        }
         
         g.setColor(Color.BLUE);
         g.fillOval(540,623,25,25);
+        if (c1 == null){
+        g.drawString("", 570, 646);
+        }else {
         g.drawString(""+c1, 570, 646);
+        }
         
         g.setColor(Color.YELLOW);
         g.fillOval(700,623,25,25);
+        if (d1 == null){
+        g.drawString("", 730, 646);
+        } else  {
         g.drawString(""+d1, 730, 646);
+        }
+        
         
         g.setColor(Color.WHITE);//tempat pergantian player
     		g.fillRect(250,5,450,130);
@@ -164,5 +181,21 @@ public class Layout extends JPanel{
         g.drawString("dadu",465,50);
         g.setFont(new Font("serif", Font.BOLD, 30));
         g.drawString("Enter untuk mulai", 370, 110);
+//         g.drawString("m", 300, 200);
+//        g.drawString("m", 300, 255);
+//        g.drawString("m", 360, 200);
+//        g.drawString("m", 360, 255);
+//           g.drawString("k", 570, 470);
+//        g.drawString("k", 570, 530);
+//        g.drawString("k", 630, 470);
+//        g.drawString("k", 630, 530);
+//         g.drawString("b", 300, 470);
+//        g.drawString("b", 300, 530);
+//        g.drawString("b", 360, 470);
+//        g.drawString("b", 360, 530);
+//         g.drawString("h", 570, 200);
+//        g.drawString("h", 570, 255);
+//        g.drawString("h", 630, 200);
+//        g.drawString("h", 630, 255);
     }
 }
